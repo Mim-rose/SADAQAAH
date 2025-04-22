@@ -1,0 +1,570 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+/* header section stats here */
+General Styles body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   padding: 1em 2em; 
+  /* padding: 2rem 8%; */
+  box-shadow: var(--box-shadow);
+  background-color: rgb(226, 200, 143);
+  color: indianred;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 7em;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  padding: 10px;
+}
+
+nav ul li a {
+  color: brown;
+  text-decoration: none;
+  gap: 10px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: antiquewhite;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Input Fields */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Social Login Buttons */
+.social-btn {
+  background-color: #3b5998; /* Example color for Facebook */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.social-btn:hover {
+  background-color: #4267b2; /* Darker shade for Facebook */
+}
+
+/* Remember Me Checkbox */
+#remember-me {
+  margin-right: 10px;
+}
+
+/* Login Options Styling */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.login-options a {
+  color: #333;
+  text-decoration: none;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+/* Actions Buttons */
+.actions {
+  display: flex;
+  gap: 20px;
+}
+
+.actions button {
+  background-color: #681b1b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Sign Up and Forgot Password Form Styles */
+.sign-up-form,
+.reset-password-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-form input,
+.reset-password-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sign-up-form button,
+.reset-password-form button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sign-up-form button:hover,
+.reset-password-form button:hover {
+  background-color: #4267b2;
+}
+/* header section ends here */
+
+/* body part starts here */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+
+
+
+
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Main Container */
+/* this is mainly for support section like progress bar, donor wall and contribute section */
+/* suppor section starts */
+/* Main Container */
+.main-container {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Contribute Section */
+.contribute-section {
+  flex: 1; /* Make the contribute section take up the remaining space */
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #fff; /* Example background color */
+  border-radius: 5px; /* Example border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example box shadow */
+}
+
+/* Contribute Section Content */
+.contribute-section section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.contribute-section button {
+  padding: 5px 10px;
+  background-color: #681b1b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.contribute-section button:hover {
+  background-color: #681b1b;
+}
+/* contribute section ends here */
+/* most probably support section ends here */
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  animation: modalopen 0.5s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* FAQs & Contact Section */
+.faq-contact {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.faq-contact h2 {
+  margin-bottom: 20px;
+}
+
+.faq-contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-contact label {
+  font-weight: bold;
+}
+
+.faq-contact input,
+.faq-contact textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.faq-contact button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.faq-contact button:hover {
+  background-color: #444;
+}
+
+/* Footer Section */
+/* Footer styles */
+.footer {
+  position: relative;
+  width: 100%;
+  background: chocolate;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .share {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .credit {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+/* General Form Styles */
+.modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+}
+
+.modal label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.modal button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.other-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.modal button:hover {
+  background-color: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .modal form {
+    padding: 10px;
+  }
+}
+
+/* body part ends here */
+
+@media (max-width: 920px) {
+  header {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
+/* code for grid section */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 30px;
+    margin-left: 50px;
+    row-gap: 50px;
+    column-gap: 50px;
+  }
+  
+  .grid-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .description {
+    padding: 15px;
+  }
+  
+  
+  
+  .description p {
+    margin-bottom: 15px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #444;
+  }
+  /* Assuming each grid has a class named "grid-item" */
+.grid-item {
+    width: 550px; /* Adjust width to your preference */
+    height: 500px; /* Adjust height to your preference */
+  }
+  
+  /* Assuming each image inside the grid has a class named "grid-image" */
+  .grid-item .grid-image {
+    width: 100%; /* Ensure the image fills the grid item */
+    height: 100%; /* Ensure the image fills the grid item */
+    object-fit: cover; /* Ensure the image covers the entire area */
+  }
+  
+  
+/* grid section ends here */

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="be4.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="Website Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="other-actions">
+        <div class="actions">
+            <button onclick="showDonationForm()">Donate Now</button>
+            <button onclick="showFundraiseForm()">Start a Fundraise</button>
+            <button  class="fas fa-user" id="login-btn" onclick="showLoginForm()"></button> <!-- Updated Login Button -->
+        </div>
+        <div class="menu-button">
+            <button class="fas fa-bars" id="menu-btn"> </button>
+        </div>
+    </div>
+    </header>
+    
+
+    <!-- code for body parts -->
+    <header1>
+        <h1>Support Fatima Jaman</h1>
+    </header>
+    <section>
+        <h2></h2>
+        <div class="patient-background"></div>
+        <p>Dear Friends, Family, and Community,
+
+           <br> I am reaching out to you with a heavy heart and a plea for urgent assistance. My dear sister Fatima Jaman(21) is fighting for her life, battling a severe liver condition that requires immediate intervention in the form of a liver transplant.
+            
+            Unfortunately, the cost of the transplant and associated medical expenses amount to an overwhelming sum of up to 45 lakhs. As her loved ones, we are determined to do everything in our power to ensure she receives the life-saving treatment she desperately needs.
+            
+            That's why we have initiated a crowdfunding campaign to raise funds for Fatima's liver transplant. Every contribution, no matter how big or small, will make a difference in her journey toward recovery. Your generosity and support during this challenging time would mean the world to us.
+            
+            Please consider donating to Fatima's treatment and sharing this message with your network. Together, we can give her hope and a chance at a healthy future.
+            
+           <br> Thank you from the bottom of our hearts for your kindness, compassion, and solidarity.
+           <br> Warm regards,
+           <br> Salma Jaman </p>
+    </section>
+    <!-- support section starts -->
+    <div class="main-container">
+        <!-- Support Section -->
+        <div class="support-section">
+            <!-- Container for Progress Bar and Donor Wall -->
+            <div class="progress-and-donors">
+                <!-- Progress Bar -->
+                <div id='123' class='progress-bar'>
+                    <div class='needed'></div>
+                    <div class='progress-done'>
+                        <span class='progress-text'></span>
+                    </div>
+                </div>
+                <!-- Donor Wall -->
+                <div id="donor-wall">
+                    <h2>Donor Wall</h2>
+                    <div class="donor-row">
+                        <div class="donor-name">Syed Ali Akbar</div>
+                        <div class="donor-amount">$50</div>
+                    </div>
+                    <div class="donor-row">
+                        <div class="donor-name">Syed Abu Taher</div>
+                        <div class="donor-amount">$100</div>
+                    </div>
+                    <div class="donor-row">
+                        <div class="donor-name">Syed Ali</div>
+                        <div class="donor-amount">$250</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Contribute Section -->
+        <div class="contribute-section">
+            <!-- Contribute Section Content Goes Here -->
+            <section>
+                <h2>Contribute</h2>
+                <p>You can contribute by clicking the button below:</p>
+                <button onclick="showDonationForm()">Donate Now</button>
+                <button onclick="showFundraiseForm()">Start a Fundraise</button>
+            </section>
+        </div>
+    </div>
+    <!--Support section ends here-->
+    
+    <!-- FAQs & Contact Section -->
+    <section class="faq-contact">
+        <h2>FAQs & Contact</h2>
+        <div class="faq">
+            <!-- FAQ content goes here -->
+        </div>
+        <p>Have a question? Contact us!</p>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <!-- login form modal -->
+    <div id="login-form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginForm()">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div class="login-options">
+                    <a href="#" onclick="showForgotPasswordForm()">Forgot Password</a>
+                    <a href="#" onclick="showSignUpForm()">Sign Up</a>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <!-- log-in form modal ends -->
+
+
+    <!-- sign-up form modal -->
+    <div id="sign-up-form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignUpForm()">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="sign-up-form">
+                <!-- Sign Up Form Fields -->
+                <label for="sign-up-email">Email:</label>
+                <input type="email" id="sign-up-email" name="email" required>
+                <label for="sign-up-password">Password:</label>
+                <input type="password" id="sign-up-password" name="password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <!-- sign up form modal ends -->
+
+
+    <!-- forget password form starts -->
+    <div id="forgot-password-form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeForgotPasswordForm()">&times;</span>
+            <h2>Forgot Password</h2>
+            <form id="forgot-password-form">
+                <!-- Forgot Password Form Fields -->
+                <label for="forgot-password-email">Email:</label>
+                <input type="email" id="forgot-password-email" name="email" required>
+                <button type="submit">Reset Password</button>
+            </form>
+        </div>
+    </div>
+    <!-- forget password form ends here -->
+
+    
+    <!-- Donation Form Modal -->
+    <div id="donationFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDonationForm()">&times;</span>
+            <h2>Donate Now</h2>
+            
+                <!-- Donation form fields go here -->
+                <form id="donationForm">
+                    <label for="donorName">Your Name:</label>
+                    <input type="text" id="donorName" name="donorName" required>
+                    
+                    <label for="donorPhone">Phone Number:</label>
+                    <input type="tel" id="donorPhone" name="donorPhone" required>
+                    
+                    <label for="donorNationality">Nationality:</label>
+                    <input type="text" id="donorNationality" name="donorNationality" required>
+                    
+                    <label for="donationType">How are you donating?</label>
+                    <select id="donationType" name="donationType">
+                        <option value="cash">Cash</option>
+                        <option value="check">Check</option>
+                        <option value="creditCard">Credit Card</option>
+                    </select>
+                    
+                    <label for="donationAmount">Amount:</label>
+                    <input type="number" id="donationAmount" name="donationAmount" min="1" step="1" required>
+                    
+                    <button type="submit" onsubmit="updateProgressBar('123', 4000, 6000, 1050
+                    )">Submit</button>
+                </form>
+        </div>
+    </div>
+
+    <!-- Fundraise Form Modal -->
+    <div id="fundraiseFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFundraiseForm()">&times;</span>
+            <h2>Start a Fundraise</h2>
+            <form id="fundraiseForm">
+                <!-- Fundraise form fields go here -->
+                <label for="fundraiserName">Fundraiser's Name:</label>
+                <input type="text" id="fundraiserName" name="fundraiserName" required>
+                
+                <label for="fundraiserPhone">Phone Number:</label>
+                <input type="tel" id="fundraiserPhone" name="fundraiserPhone" required>
+                
+                <label for="fundraiserNationality">Nationality:</label>
+                <input type="text" id="fundraiserNationality" name="fundraiserNationality" required>
+                
+                <label for="fundraiserNationalId">National ID Card Number:</label>
+                <input type="text" id="fundraiserNationalId" name="fundraiserNationalId" required>
+                
+                <label for="fundraiseTitle">Fundraise Title:</label>
+                <input type="text" id="fundraiseTitle" name="fundraiseTitle" required>
+                
+                <label for="fundraiseGoal">Fundraising Goal:</label>
+                <input type="number" id="fundraiseGoal" name="fundraiseGoal" min="1" step="1" required>
+                
+                <label for="fundraiseDescription">Description:</label>
+                <textarea id="fundraiseDescription" name="fundraiseDescription" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <!-- footer section -->
+<footer class="footer">
+    <ul class="social-icon">
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </li>
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </li>
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+      <li class="social-icon__item">
+        <a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+    </ul>
+    <p>&copy;2024 FUND | All Rights Reserved</p>
+  </footer>
+  <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  
+    <!-- footer section ends -->
+    <!-- also body parts ends here -->
+    <script src="be4.js"></script>
+</body>
+</html>

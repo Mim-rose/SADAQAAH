@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sadaqaah</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="stylesheet" href="be2.css" />
+    <link rel="stylesheet" href="livefund.css" />
+    
+    
+
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="Website Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="other-actions">
+        <div class="actions">
+          <button onclick="showDonationForm()">Donate Now</button>
+          <button onclick="showFundraiseForm()">Start a Fundraise</button>
+          <button class="fas fa-user" id="login-btn" onclick="showLoginForm()">
+            Log-in
+          </button>
+          <!-- Updated Login Button -->
+          <button type="submit" onclick="logout()">Logout</button>
+        </div>
+        <div class="menu-button" id="menu-button">
+          <svg
+            class="menu-svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+              fill="currentColor"
+            />
+            <path
+              d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
+              fill="currentColor"
+            />
+            <path
+              d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
+    </header>
+    <!-- login form modal -->
+    <div id="login-form-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoginForm()">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form" method="post">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email"  required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          
+      
+          <div class="login-options">
+            <a href="#" onclick="showForgotPasswordForm()">Forgot Password</a>
+            <div class="signup-link">
+              <p>Don't have an account? <a href="#" onclick="showSignUpForm()">Sign Up</a></p>
+            </div>
+          </div>
+          
+          <button type="submit">Login</button>
+        </form>
+        
+        
+      </div>
+    </div>
+    <!-- log-in form modal ends -->
+
+    <!-- sign-up form modal -->
+    <div id="sign-up-form-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeSignUpForm()">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="sign-up-form">
+          <!-- Sign Up Form Fields -->
+          <label for="sign-up-email">Email:</label>
+          <input type="email" id="sign-up-email" name="email" required />
+          <label for="sign-up-password">Password:</label>
+          <input
+            type="password"
+            id="sign-up-password"
+            name="password"
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <!-- sign up form modal ends -->
+
+    <!-- forget password form starts -->
+    <div id="forgot-password-form-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeForgotPasswordForm()">&times;</span>
+        <h2>Forgot Password</h2>
+        <form id="forgot-password-form">
+          <!-- Forgot Password Form Fields -->
+          <label for="forgot-password-email">Email:</label>
+          <input
+            type="email"
+            id="forgot-password-email"
+            name="email"
+            required
+          />
+          <button type="submit">Reset Password</button>
+        </form>
+      </div>
+    </div>
+    <!-- forget password form ends here -->
+
+    <!-- Donation Form Modal -->
+    <div id="donationFormModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeDonationForm()">&times;</span>
+        <h2>Donate Now</h2>
+
+        <!-- Donation form fields go here -->
+        <form id="donationForm">
+          <label for="donorName">Your Name:</label>
+          <input type="text" id="donorName" name="donorName" required />
+
+          <label for="donorPhone">Phone Number:</label>
+          <input type="tel" id="donorPhone" name="donorPhone" required />
+
+          <label for="donorNationality">Nationality:</label>
+          <input
+            type="text"
+            id="donorNationality"
+            name="donorNationality"
+            required
+          />
+
+          <label for="donationType">How are you donating?</label>
+          <select id="donationType" name="donationType">
+            <option value="cash">Cash</option>
+            <option value="check">Check</option>
+            <option value="creditCard">Credit Card</option>
+          </select>
+
+          <label for="donationAmount">Amount:</label>
+          <input
+            type="number"
+            id="donationAmount"
+            name="donationAmount"
+            min="1"
+            step="1"
+            required
+          />
+
+          <button
+            type="submit"
+            onsubmit="updateProgressBar('123', 4000, 6000, 1050
+              )"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Fundraise Form Modal -->
+    <div id="fundraiseFormModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeFundraiseForm()">&times;</span>
+        <h2>Start a Fundraise</h2>
+        <form id="fundraiseForm">
+          <!-- Fundraise form fields go here -->
+          <label for="fundraiserName">Fundraiser's Name:</label>
+          <input
+            type="text"
+            id="fundraiserName"
+            name="fundraiserName"
+            required
+          />
+
+          <label for="fundraiserPhone">Phone Number:</label>
+          <input
+            type="tel"
+            id="fundraiserPhone"
+            name="fundraiserPhone"
+            required
+          />
+
+          <label for="fundraiserNationality">Nationality:</label>
+          <input
+            type="text"
+            id="fundraiserNationality"
+            name="fundraiserNationality"
+            required
+          />
+
+          <label for="fundraiserNationalId">National ID Card Number:</label>
+          <input
+            type="text"
+            id="fundraiserNationalId"
+            name="fundraiserNationalId"
+            required
+          />
+
+          <label for="fundraiseTitle">Fundraise Title:</label>
+          <input
+            type="text"
+            id="fundraiseTitle"
+            name="fundraiseTitle"
+            required
+          />
+
+          <label for="fundraiseGoal">Fundraising Goal:</label>
+          <input
+            type="number"
+            id="fundraiseGoal"
+            name="fundraiseGoal"
+            min="1"
+            step="1"
+            required
+          />
+
+          <label for="fundraiseDescription">Description:</label>
+          <textarea
+            id="fundraiseDescription"
+            name="fundraiseDescription"
+            required
+          ></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Home section with background image -->
+    <section class="home" id="home">
+      <div class="background-images">
+        <!-- Background images -->
+      </div>
+      <a href="allLiveFunds.html" class="cta-btn">DONATE NOW!</a>
+    </section>
+    <!--Our Top Fundraiser -->
+    <!-- Our Top Fundraiser -->
+    <section class="fundraising-section">
+      <h2 class="section-heading">Our Top fundraising</h2>
+      <div class="slider-container-new">
+        <div class="slide fade">
+          <div class="slide-new">
+            <img src="images/fj1.png" alt="Image 1" />
+            <div class="slide-content-new">
+              <p>
+                Fatima Jahan(31) is fighting for her life, battling a severe
+                liver condition that requires immediate intervention in the form
+                of a liver transplant. Unfortunately, the cost of the transplant
+                and associated medical expenses amount to an overwhelming sum of
+                up to 45 lakhs.
+              </p>
+              <a href="be2.html" class="read-more-new">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide fade">
+          <div class="slide-new">
+            <img src="images/fsfn1.png" alt="Image 2" />
+            <div class="slide-content-new">
+              <p>
+                In her final years, the sixty-year-old Kulsu Begum finds herself
+                fending for survival, as her children neglect their duty to
+                support her, compelling her to face daily struggles to
+                sustain herself...
+              </p>
+              <a href="backend.html" class="read-more-new">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide fade">
+          <div class="slide-new">
+            <img src="images/fs3fn.png" alt="Image 3" />
+            <div class="slide-content-new">
+              <p>
+                A 2021 joint study by Commonwealth Foundation, LEEDO, Ahsania
+                Mission also mentioned that 98.5 percent of street children are
+                deprived of education, work an average of 10 hours a day, while
+                35 percent of them are involved in begging.
+              </p>
+              <a href="backend.html" class="read-more-new">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide fade">
+          <div class="slide-new">
+            <img src="images/fs4fn2.png" alt="Image 4" />
+            <div class="slide-content-new">
+              <p>
+                Children in Gaza have been killed and maimed at an unprecedented
+                rate. More than 13,800 Palestinian children have been killed in
+                Gaza, and 33 Israeli children were killed by armed groups in the
+                7 October attacks. At least 725 children have been injured since
+                7 October in the West Bank, including East Jerusalem, and 114
+                have been killed.
+              </p>
+              <a href="backend.html" class="read-more-new">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- our top fundraiser ends -->
+
+    <section class="content-section">
+      <h2 class="section-heading">About Us</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="images/aufin.jpg" alt="Image 1" />
+        </div>
+        <div class="grid-item">
+          <p>
+            Sadaqaah is one of the best nonprofit fundraising organization in
+            Bangladesh that allows you to lend a helping hand who need it the
+            most.We are here for anyone who needs financial assistance and
+            looking fundraising platform in Bangladesh
+          </p>
+        </div>
+        <div class="grid-item">
+          <p>
+            <span> Sadaqaah</span> ensures your Zakat finds those in utmost
+            need, ensuring each contribution makes a difference
+          </p>
+        </div>
+        <div class="grid-item">
+          <img src="images/ab2.png" alt="Image 2" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section below the About Us -->
+    <!-- Category Section -->
+    <section class="flex-container">
+      <h2 class="section-title section-heading">Our Services Category</h2>
+
+      <div class="flex-section">
+        <div class="flex-item">
+          <i class="fas fa-heartbeat"></i>
+          <h4>Health and Medical</h4>
+          <p>Working towards providing quality healthcare</p>
+          <button class="detail-btn">Learn More</button>
+        </div>
+
+        <div class="flex-item">
+          <i class="fas fa-child"></i>
+          <h4>Child Rights</h4>
+          <p>Promoting and protecting the rights of children</p>
+          <button class="detail-btn">Learn More</button>
+        </div>
+
+        <div class="flex-item">
+          <i class="fas fa-user-friends"></i>
+          <h4>Rights of Elders</h4>
+          <p>Supporting the elderly in living a dignified life</p>
+          <button class="detail-btn">Learn More</button>
+        </div>
+
+        <div class="flex-item">
+          <i class="fas fa-bomb"></i>
+          <h4>War & Calamities</h4>
+          <p>Aiding victims of war and natural disasters</p>
+          <button class="detail-btn">Learn More</button>
+        </div>
+      </div>
+    </section>
+    <!-- category section ends -->
+
+    <!-- join us section starts -->
+    <!-- Join Us Section -->
+    <section class="flex-container">
+      <h2 class="section-title section-heading">
+        Join us <span> to make a difference </span>
+      </h2>
+      <div class="flex-section">
+        <!-- Flexbox 1 -->
+        <div class="flex-item">
+          <i class="fas fa-hand-holding-heart"></i>
+          <!-- Font Awesome icon for Donate -->
+          <h4>Donate</h4>
+          <p>Help us make a difference by donating to our cause.</p>
+          <button class="detail-btn">Donate</button>
+        </div>
+
+        <!-- Flexbox 2 -->
+        <div class="flex-item">
+          <i class="fas fa-handshake"></i>
+          <!-- Font Awesome icon for Fundraise -->
+          <h4>Fundraise</h4>
+          <p>Start your own fundraising campaign to support our mission.</p>
+          <button class="detail-btn">Fundraise</button>
+        </div>
+
+        <!-- Flexbox 3 -->
+        <div class="flex-item">
+          <i class="fas fa-users"></i>
+          <!-- Font Awesome icon for Volunteer -->
+          <h4>Volunteer</h4>
+          <p>Join us as a volunteer and be a part of our team.</p>
+          <button class="detail-btn">Volunteer</button>
+        </div>
+      </div>
+    </section>
+    <!-- join us section ends -->
+
+    <!-- testimonial section starts -->
+    <section class="testimonial-content">
+      <h2 id="testimonial-header" class="testimonial-section">
+        Stories that inspire
+      </h2>
+
+      <div class="slider-container">
+        <div class="slides">
+          <img class="image-slide" src="images/crs1.jpg" alt="Image 1" />
+          <img class="image-slide" src="images/crs2.jpg" alt="Image 2" />
+          <img class="image-slide" src="images/crs3.jpg" alt="Image 3" />
+          <img class="image-slide" src="images/crs4.png" alt="Image 4" />
+        </div>
+        <div class="dots-container">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+    <!-- testimonial section ends -->
+
+    <!-- contact us section starts -->
+    <section class="contact" id="contact">
+      <div class="image2">
+        <img src="images/Cc2.jpg" alt="" />
+      </div>
+      <form action="">
+        <h3>Contact Us</h3>
+        <input type="text" placeholder="your name" class="box" />
+        <input type="email" placeholder="your email" class="box" />
+        <input type="number" placrholder="your number" class="box" />
+        <textarea
+          name=""
+          placeholder="your message"
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+        <input type="submit" value="send message" class="btn" />
+      </form>
+    </section>
+    <!-- contact us section ends -->
+
+    <!-- footer section -->
+    <footer class="footer">
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+      </ul>
+      <p>&copy;2024 FUND | All Rights Reserved</p>
+    </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- footer section ends -->
+    <script src="script.js"></script>
+  </body>
+</html>

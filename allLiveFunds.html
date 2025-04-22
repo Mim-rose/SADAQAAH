@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Fundraising</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="be2.css" />
+    <link rel="stylesheet" href="livefund.css">
+ 
+
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="Website Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="other-actions">
+        <div class="actions">
+          <button onclick="showDonationForm()">Donate Now</button>
+          <button onclick="showFundraiseForm()">Start a Fundraise</button>
+          <button class="fas fa-user" id="login-btn" onclick="showLoginForm()">
+            Log-in
+          </button>
+          <!-- Updated Login Button -->
+        </div>
+        <div class="menu-button" id="menu-button">
+          <svg class="menu-svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z"
+    fill="currentColor"
+  />
+  <path
+    d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z"
+    fill="currentColor"
+  />
+  <path
+    d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z"
+    fill="currentColor"
+  />
+</svg>
+        </div>
+      </div>
+    </header>
+    <div class="section-heading"><p class="heading">ALL LIVE FUNDRAISING</p></div>
+    <div class="section-container">
+      <div class="card-container">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/card-1-image.png" alt="">
+            </div>
+            <div class="card-details">
+            <div class="card-title">DO IT BEFORE IT GETS LATE!</div>
+            <div class="card-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem doloribus voluptatem sit neque esse pariatur illum, repudiandae</div>
+          </div>
+          <div class="card-button card-button-container">
+            <a href="" class="card-button">DONATE</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="images/card-2-image.png" alt="">
+          </div>
+          <div class="card-details">
+          <div class="card-title">DO IT BEFORE IT GETS LATE!</div>
+          <div class="card-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem doloribus voluptatem sit neque esse pariatur illum, repudiandae</div>
+        </div>
+        <div class="card-button card-button-container">
+          <a href="" class="card-button">DONATE</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="images/card-3-image.png" alt="">
+        </div>
+        <div class="card-details">
+        <div class="card-title">DO IT BEFORE IT GETS LATE!</div>
+        <div class="card-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem doloribus voluptatem sit neque esse pariatur illum, repudiandae</div>
+      </div>
+      <div class="card-button card-button-container">
+        <a href="" class="card-button">DONATE</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/card-4-image.jpg" alt="">
+      </div>
+      <div class="card-details">
+      <div class="card-title">DO IT BEFORE IT GETS LATE!</div>
+      <div class="card-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem doloribus voluptatem sit neque esse pariatur illum, repudiandae</div>
+    </div>
+    <div class="card-button card-button-container">
+      <a href="" class="card-button">DONATE</a>
+    </div>
+  </div>
+      </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="footer">
+      <ul class="social-icon">
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li class="social-icon__item">
+          <a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+      </ul>
+      <p>&copy;2024 FUND | All Rights Reserved</p>
+    </footer>  <!-- footer section ends -->
+  <!-- also body parts ends here -->
+  </body>
+
+
+      <!-- Footer Section -->
+      
+    <script src="be2.js"></script>
+</html>
+
+</html>

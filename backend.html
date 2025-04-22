@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadaqaah</title>
+    <link rel="stylesheet" href="backend.css">
+</head>
+<body>
+    <header>
+        <h1>Support Fatima Jaman</h1>
+    </header>
+    <section>
+        <h2></h2>
+        <img src="/images/fjb2.png" alt="Picture of Fatima Jaman" class="patient-pic">
+        <p>Dear Friends, Family, and Community,
+
+           <br> I am reaching out to you with a heavy heart and a plea for urgent assistance. My dear sister Fatima Jaman(21) is fighting for her life, battling a severe liver condition that requires immediate intervention in the form of a liver transplant.
+            
+            Unfortunately, the cost of the transplant and associated medical expenses amount to an overwhelming sum of up to 45 lakhs. As her loved ones, we are determined to do everything in our power to ensure she receives the life-saving treatment she desperately needs.
+            
+            That's why we have initiated a crowdfunding campaign to raise funds for Fatima's liver transplant. Every contribution, no matter how big or small, will make a difference in her journey toward recovery. Your generosity and support during this challenging time would mean the world to us.
+            
+            Please consider donating to Fatima's treatment and sharing this message with your network. Together, we can give her hope and a chance at a healthy future.
+            
+           <br> Thank you from the bottom of our hearts for your kindness, compassion, and solidarity.
+           <br> Warm regards,
+           <br> Salma Jaman <p>
+    </section>
+    <div class="main-container">
+        <!-- Support Section -->
+        <div class="support-section">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill"> 50% fund is raised till now</div>
+            </div>
+            
+            
+    
+            <!-- Donor Wall -->
+            <div id="donor-wall">
+                <h2>Donor Wall</h2>
+                <ul id="donor-list">
+                    <li>Syed Ali Akbar - $50</li>
+                    <li>Syed Abu Taher - $100</li>
+                    <li>Syed Ali - $250</li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Contribute Section -->
+        <div class="contribute-section">
+            <section>
+                <h2>Contribute</h2>
+                <p>You can contribute by clicking the button below:</p>
+                <button onclick="showDonationForm()">Donate Now</button>
+                <button onclick="showFundraiseForm()">Start a Fundraise</button>
+            </section>
+        </div>
+    </div>
+    
+    <!-- FAQs & Contact Section -->
+    <section class="faq-contact">
+        <h2>FAQs & Contact</h2>
+        <div class="faq">
+            <!-- FAQ content goes here -->
+        </div>
+        <p>Have a question? Contact us!</p>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Donation Form Modal -->
+    <div id="donationFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDonationForm()">&times;</span>
+            <h2>Donate Now</h2>
+            
+                <!-- Donation form fields go here -->
+                <form id="donationForm">
+                    <label for="donorName">Your Name:</label>
+                    <input type="text" id="donorName" name="donorName" required>
+                    
+                    <label for="donorPhone">Phone Number:</label>
+                    <input type="tel" id="donorPhone" name="donorPhone" required>
+                    
+                    <label for="donorNationality">Nationality:</label>
+                    <input type="text" id="donorNationality" name="donorNationality" required>
+                    
+                    <label for="donationType">How are you donating?</label>
+                    <select id="donationType" name="donationType">
+                        <option value="cash">Cash</option>
+                        <option value="check">Check</option>
+                        <option value="creditCard">Credit Card</option>
+                    </select>
+                    
+                    <label for="donationAmount">Amount:</label>
+                    <input type="number" id="donationAmount" name="donationAmount" min="1" step="1" required>
+                    
+                    <button type="submit" onclick="submitDonation(document.getElementById('donationAmount').value)">Submit</button>
+                </form>
+        </div>
+    </div>
+
+    <!-- Fundraise Form Modal -->
+    <div id="fundraiseFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFundraiseForm()">&times;</span>
+            <h2>Start a Fundraise</h2>
+            <form id="fundraiseForm">
+                <!-- Fundraise form fields go here -->
+                <label for="fundraiserName">Fundraiser's Name:</label>
+                <input type="text" id="fundraiserName" name="fundraiserName" required>
+                
+                <label for="fundraiserPhone">Phone Number:</label>
+                <input type="tel" id="fundraiserPhone" name="fundraiserPhone" required>
+                
+                <label for="fundraiserNationality">Nationality:</label>
+                <input type="text" id="fundraiserNationality" name="fundraiserNationality" required>
+                
+                <label for="fundraiserNationalId">National ID Card Number:</label>
+                <input type="text" id="fundraiserNationalId" name="fundraiserNationalId" required>
+                
+                <label for="fundraiseTitle">Fundraise Title:</label>
+                <input type="text" id="fundraiseTitle" name="fundraiseTitle" required>
+                
+                <label for="fundraiseGoal">Fundraising Goal:</label>
+                <input type="number" id="fundraiseGoal" name="fundraiseGoal" min="1" step="1" required>
+                
+                <label for="fundraiseDescription">Description:</label>
+                <textarea id="fundraiseDescription" name="fundraiseDescription" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="btn"><i class="fab fa-facebook"></i> facebook </a>
+            <a href="#" class="btn"><i class="fab fa-twitter"> twitter </i></a>
+            <a href="#" class="btn"><i class="fab fa-instagram"> instagram </i></a>
+            <a href="#"class="btn"><i class="fab fa-linkedin"> linkedin </i></a>
+            <a href="#" class="btn"><i class="fab fa-pinterest"> pinterest </i></a>
+        </div>
+        <div class="credit"> created by <span>SCATTERBRAIN</span> |all rights reserved| </div>
+    </section>
+    <!-- footer section ends -->
+
+    <script src="backend.js"></script>
+</body>
+</html>
